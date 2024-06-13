@@ -1,0 +1,17 @@
+C:\Users\pca16\Desktop\user data Project\BLL\bin\Debug\net7.0\UserData.Services.deps.json
+C:\Users\pca16\Desktop\user data Project\BLL\bin\Debug\net7.0\UserData.Services.runtimeconfig.json
+C:\Users\pca16\Desktop\user data Project\BLL\bin\Debug\net7.0\UserData.Services.dll
+C:\Users\pca16\Desktop\user data Project\BLL\bin\Debug\net7.0\UserData.Services.pdb
+C:\Users\pca16\Desktop\user data Project\BLL\bin\Debug\net7.0\UserData.Repository.dll
+C:\Users\pca16\Desktop\user data Project\BLL\bin\Debug\net7.0\UserData.Repository.pdb
+C:\Users\pca16\Desktop\user data Project\BLL\obj\Debug\net7.0\UserData.Services.csproj.AssemblyReference.cache
+C:\Users\pca16\Desktop\user data Project\BLL\obj\Debug\net7.0\UserData.Services.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\pca16\Desktop\user data Project\BLL\obj\Debug\net7.0\UserData.Services.AssemblyInfoInputs.cache
+C:\Users\pca16\Desktop\user data Project\BLL\obj\Debug\net7.0\UserData.Services.AssemblyInfo.cs
+C:\Users\pca16\Desktop\user data Project\BLL\obj\Debug\net7.0\UserData.Services.csproj.CoreCompileInputs.cache
+C:\Users\pca16\Desktop\user data Project\BLL\obj\Debug\net7.0\UserData.Services.csproj.CopyComplete
+C:\Users\pca16\Desktop\user data Project\BLL\obj\Debug\net7.0\UserData.Services.dll
+C:\Users\pca16\Desktop\user data Project\BLL\obj\Debug\net7.0\refint\UserData.Services.dll
+C:\Users\pca16\Desktop\user data Project\BLL\obj\Debug\net7.0\UserData.Services.pdb
+C:\Users\pca16\Desktop\user data Project\BLL\obj\Debug\net7.0\UserData.Services.genruntimeconfig.cache
+C:\Users\pca16\Desktop\user data Project\BLL\obj\Debug\net7.0\ref\UserData.Services.dll

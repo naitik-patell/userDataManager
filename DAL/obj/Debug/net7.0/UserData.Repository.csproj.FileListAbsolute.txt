@@ -1,0 +1,14 @@
+C:\Users\pca16\Desktop\user data Project\DAL\bin\Debug\net7.0\UserData.Repository.deps.json
+C:\Users\pca16\Desktop\user data Project\DAL\bin\Debug\net7.0\UserData.Repository.runtimeconfig.json
+C:\Users\pca16\Desktop\user data Project\DAL\bin\Debug\net7.0\UserData.Repository.dll
+C:\Users\pca16\Desktop\user data Project\DAL\bin\Debug\net7.0\UserData.Repository.pdb
+C:\Users\pca16\Desktop\user data Project\DAL\obj\Debug\net7.0\UserData.Repository.csproj.AssemblyReference.cache
+C:\Users\pca16\Desktop\user data Project\DAL\obj\Debug\net7.0\UserData.Repository.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\pca16\Desktop\user data Project\DAL\obj\Debug\net7.0\UserData.Repository.AssemblyInfoInputs.cache
+C:\Users\pca16\Desktop\user data Project\DAL\obj\Debug\net7.0\UserData.Repository.AssemblyInfo.cs
+C:\Users\pca16\Desktop\user data Project\DAL\obj\Debug\net7.0\UserData.Repository.csproj.CoreCompileInputs.cache
+C:\Users\pca16\Desktop\user data Project\DAL\obj\Debug\net7.0\UserData.Repository.dll
+C:\Users\pca16\Desktop\user data Project\DAL\obj\Debug\net7.0\refint\UserData.Repository.dll
+C:\Users\pca16\Desktop\user data Project\DAL\obj\Debug\net7.0\UserData.Repository.pdb
+C:\Users\pca16\Desktop\user data Project\DAL\obj\Debug\net7.0\UserData.Repository.genruntimeconfig.cache
+C:\Users\pca16\Desktop\user data Project\DAL\obj\Debug\net7.0\ref\UserData.Repository.dll
