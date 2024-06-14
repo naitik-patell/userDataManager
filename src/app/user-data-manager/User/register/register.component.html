@@ -1,0 +1,151 @@
+<app-navbar *ngIf="this.id" [heading]="NavbarHeading"></app-navbar>
+
+<mat-toolbar *ngIf="!this.id" color="primary">
+    <mat-toolbar-row class="d-flex justify-content-between ">
+        <div>
+            <span>Register User Data Manager</span>
+
+        </div>
+
+       
+    </mat-toolbar-row>
+</mat-toolbar>
+<form [formGroup]="RegisterForm" >
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title *ngIf="!this.id">Register user</mat-card-title>
+            <mat-card-title *ngIf="this.id">Update user</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <div class="row row-content">
+                <div class="col-sm-6">
+                    <mat-form-field>
+                        <mat-label>Enter First Name</mat-label>
+                        <input matInput formControlName="firstName" [errorStateMatcher]="matcher">
+                        <mat-error *ngIf="RegisterForm?.get('firstName')?.hasError('required')">
+                            FirstName field is <strong>required</strong>
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="col-sm-6">
+                    <mat-form-field>
+                        <mat-label>Enter Last Name</mat-label>
+                        <input matInput formControlName="lastName" [errorStateMatcher]="matcher">
+                        <mat-error *ngIf="RegisterForm.get('lastName')?.hasError('required')">
+                            LastName field is <strong>required</strong>
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <mat-form-field>
+                        <mat-label>Enter UserName</mat-label>
+                        <input matInput formControlName="userName" [errorStateMatcher]="matcher">
+                        <mat-error *ngIf="RegisterForm.get('userName')?.hasError('required')">
+                            UserName field is <strong>required</strong>
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="col-sm-6">
+                    <mat-form-field>
+                        <mat-label>Enter Email</mat-label>
+                        <input matInput formControlName="email" [errorStateMatcher]="matcher">
+                        <mat-error
+                            *ngIf="RegisterForm.get('email')?.hasError('email') && !RegisterForm.get('email')?.hasError('required')">
+                            Enter correct Email field
+                        </mat-error>
+                        <mat-error *ngIf="RegisterForm.get('email')?.hasError('required')">
+                            Email field is <strong>required</strong>
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <mat-form-field>
+                        <mat-label>Enter Password</mat-label>
+                        <input matInput type="password" formControlName="password" [errorStateMatcher]="matcher"  >
+                        <mat-error
+                            *ngIf="RegisterForm.get('password')?.hasError('pattern') && !RegisterForm.get('password')?.hasError('required')">
+                            Password must have a minimum of 6 characters
+                        </mat-error>
+                        <mat-error *ngIf="RegisterForm.get('password')?.hasError('required')">
+                            Password is <strong>required</strong>
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="col-sm-6 ">
+                    <mat-radio-group aria-label="Select Gender" class="d-flex float-left" formControlName="gender">
+                        <div class="d-flex align-items-center ">Select gender : </div>
+                        <mat-radio-button *ngFor="let gender of Gender" [value]="gender.id">
+                            {{ gender.gender1 }}
+                        </mat-radio-button>
+                        <!-- <mat-radio-button value="Male">Male</mat-radio-button>
+                        <mat-radio-button value="Female">Female</mat-radio-button> -->
+                    </mat-radio-group>
+                </div>
+
+            </div>
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <mat-form-field>
+                        <mat-label>Enter Phone</mat-label>
+                        <input matInput formControlName="phone" [errorStateMatcher]="matcher">
+                        <mat-error
+                            *ngIf="RegisterForm.get('phone')?.hasError('pattern') && !RegisterForm.get('phone')?.hasError('required')">
+                            Phone number must be of 10 digits
+                            <strong>required</strong>
+                        </mat-error>
+                        <mat-error *ngIf="RegisterForm.get('phone')?.hasError('required')">
+                            phone field is <strong>required</strong>
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="col-sm-6">
+                    <mat-form-field>
+                        <mat-label>Enter Birthdate</mat-label>
+                        <input matInput [matDatepicker]="picker" formControlName="birthDate">
+                        <mat-hint>MM/DD/YYYY</mat-hint>
+                        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker></mat-datepicker>
+                    </mat-form-field>
+                </div>
+
+            </div>
+
+            <div class="row">
+                <div class="col-sm-6">
+                    <mat-form-field>
+                        <mat-label>Enter Address</mat-label>
+                        <input matInput maxlength="150" formControlName="streetAddress" [errorStateMatcher]="matcher">
+                        <mat-error *ngIf="RegisterForm.get('streetAddress')?.hasError('required')">
+                            Address field is <strong>required</strong>
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="col-sm-6">
+                    <mat-form-field>
+                        <mat-label>Enter country</mat-label>
+                        <mat-select matInput formControlName="countryId" [errorStateMatcher]="matcher">
+                            <!-- <mat-option [value]="null"></mat-option> -->
+                            <mat-option *ngFor="let country of Countries"
+                                [value]="country.id">{{country.name}}</mat-option>
+
+                        </mat-select>
+                        <mat-error *ngIf="RegisterForm.get('gender')?.hasError('required')">
+                            country is <strong>required</strong>
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+
+            </div>
+
+            <mat-card-actions>
+                <button color="primary" *ngIf="!this.id" mat-raised-button (click)="RegisterUser()">Save</button>
+                <button color="primary" *ngIf="this.id" mat-raised-button [disabled]="!hasFormChanged()" (click)="UpdateUserData(this.id)">Update</button>
+            </mat-card-actions>
+        </mat-card-content>
+    </mat-card>
+</form>

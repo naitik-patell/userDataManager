@@ -1,0 +1,9 @@
+<!-- <h2 mat-dialog-title>Hi {{data.username}}</h2> -->
+<mat-dialog-content>
+  <div>Are you sure to delete the data for the  <strong>{{data.username}}</strong> </div>
+  
+</mat-dialog-content>
+<mat-dialog-actions class="d-flex justify-content-end">
+  <button mat-button (click)="onNoClick()" cdkFocusInitial>No Thanks</button>
+  <button mat-button [mat-dialog-close]="data.id" (click)="onOkClick()" >Ok</button>
+</mat-dialog-actions>

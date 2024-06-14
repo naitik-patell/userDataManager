@@ -1,0 +1,49 @@
+<app-navbar [heading]="NavbarHeading"></app-navbar>
+
+<form [formGroup]="countryForm" >
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title *ngIf="!this.countryId">Add country</mat-card-title>
+            <mat-card-title *ngIf="this.countryId">Update country</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <div class="row row-content">
+                <div class="col-sm-6">
+                    <mat-form-field>
+                        <mat-label>Enter Country Name</mat-label>
+                        <input matInput formControlName="name" [errorStateMatcher]="matcher">
+                        <mat-error *ngIf="countryForm.get('name')?.hasError('required')">
+                            Country name field is <strong>required</strong>
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="col-sm-6">
+                    <mat-form-field>
+                        <mat-label>Enter Description for the country</mat-label>
+                        <!-- <input matInput formControlName="description" [errorStateMatcher]="matcher"> -->
+                        <textarea matInput formControlName="description" [errorStateMatcher]="matcher" ></textarea>
+                       
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row row-content">
+                <div class="col-sm-6">
+                    <mat-form-field>
+                        <mat-label>Flag url</mat-label>
+                        <input matInput formControlName="FlagUrl" [errorStateMatcher]="matcher">
+                       
+                    </mat-form-field>
+                </div>
+              
+            </div>
+            
+
+           
+
+            <mat-card-actions>
+                <button color="primary" *ngIf="!this.countryId" mat-raised-button (click)="addCountry()">Save</button>
+                <button color="primary" *ngIf="this.countryId" mat-raised-button [disabled]="!hasFormChanged()" (click)="UpdateCountryData(this.countryId)">Update</button>
+            </mat-card-actions>
+        </mat-card-content>
+    </mat-card>
+</form>

@@ -1,0 +1,49 @@
+<app-navbar [heading]="NavbarHeading"></app-navbar>
+
+<mat-form-field appearance="outline" class="m-2">
+    <mat-label class="search-label">
+        Search here
+        <mat-icon class="search-icon"  aria-hidden="false" aria-label="Example searchicon" fontIcon="search"></mat-icon></mat-label>
+    <input matInput (keyup)="SearchFilter($any($event.target).value)">
+</mat-form-field>
+<div class="m-3">
+<table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8 m-3">
+
+
+    <!-- ID Column -->
+    <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> No. </th>
+        <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+    </ng-container>
+
+    <!-- FirstName Column -->
+    <ng-container matColumnDef="country">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Country Name </th>
+        <td mat-cell *matCellDef="let element"> <img src={{element.flagUrl}} class="flag-image"/> {{element.name}} </td>
+        <!-- <td mat-cell *matCellDef="let element">  </td> -->
+    </ng-container>
+
+    <!-- LastName Column -->
+    <ng-container matColumnDef="description">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Description </th>
+        <td mat-cell *matCellDef="let element"> {{element.description}} </td>
+    </ng-container>
+
+    <!-- Actions Column  -->
+    <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef> Actions </th>
+        <td mat-cell *matCellDef="let element">
+            <button mat-raised-button color="primary" (click)="EditCountryData(element.id)" class="m-1"><mat-icon
+                    aria-hidden="false" aria-label="Example edit icon" class="m-0"  fontIcon="edit"></mat-icon></button>
+            <button mat-raised-button color="warn" (click)="openDialog(element.name,element.id)" class="m-1"><mat-icon
+                    aria-hidden="false" aria-label="Example delete icon" class="m-0"  fontIcon="delete"></mat-icon></button>
+        </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+</div>
+<mat-paginator [length]="dataSource.data.length" [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 100]"
+    aria-label="Select page">
+</mat-paginator>

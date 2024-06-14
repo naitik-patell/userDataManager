@@ -1,0 +1,13 @@
+.search-label {
+    display: flex;
+    align-items: center;
+  }
+  
+  .search-icon {
+    font-size: 24px; /* Adjust the size as needed */
+    margin-left: 8px; /* Adjust the space between text and icon if necessary */
+  }
+
+  mat-form-field{
+    width: 30%;
+  }

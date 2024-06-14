@@ -1,0 +1,84 @@
+<app-navbar [heading]="NavbarHeading"></app-navbar>
+
+<mat-form-field appearance="outline" class="m-2">
+  <mat-label class="search-label">
+    Search here
+    <mat-icon class="search-icon" aria-hidden="false" aria-label="Example searchicon" fontIcon="search"></mat-icon>
+  </mat-label>
+  
+  <input matInput (keyup)="SearchFilter($any($event.target).value)">
+</mat-form-field>
+
+<table mat-table [dataSource]="dataSource" matSort class="mat-elevation-z8">
+
+
+  <!-- ID Column -->
+  <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> No. </th>
+    <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+  </ng-container>
+
+  <!-- FirstName Column -->
+  <ng-container matColumnDef="firstName">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> First Name </th>
+    <td mat-cell *matCellDef="let element"> {{element.firstName}} </td>
+  </ng-container>
+
+  <!-- LastName Column -->
+  <ng-container matColumnDef="lastName">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> Last Name </th>
+    <td mat-cell *matCellDef="let element"> {{element.lastName}} </td>
+  </ng-container>
+
+  <!-- Email Column -->
+  <ng-container matColumnDef="email">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> Email </th>
+    <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+  </ng-container>
+  <!-- Phone Column -->
+  <ng-container matColumnDef="phone">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> Phone </th>
+    <td mat-cell *matCellDef="let element"> {{element.phone}} </td>
+  </ng-container>
+  <!-- UserName Column -->
+  <ng-container matColumnDef="userName">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> UserName </th>
+    <td mat-cell *matCellDef="let element"> {{element.userName }} </td>
+  </ng-container>
+  <!-- Country Column -->
+  <ng-container matColumnDef="country">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> Country </th>
+    <td mat-cell *matCellDef="let element"> {{element.country}} </td>
+  </ng-container>
+  <!-- Gender Column -->
+  <ng-container matColumnDef="genderName">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> Gender </th>
+    <td mat-cell *matCellDef="let element"> {{element.genderName}} </td>
+  </ng-container>
+  <!-- Address Column -->
+  <ng-container matColumnDef="streetAddress">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> Address </th>
+    <td mat-cell *matCellDef="let element"> {{element.streetAddress}} </td>
+  </ng-container>
+  <!-- birthDate Column -->
+  <ng-container matColumnDef="birthDate">
+    <th mat-header-cell *matHeaderCellDef mat-sort-header> Birth Date </th>
+    <td mat-cell *matCellDef="let element"> {{element.birthDate}} </td>
+  </ng-container>
+  <!-- Action button Column -->
+  <ng-container matColumnDef="actions">
+    <th mat-header-cell *matHeaderCellDef> Actions </th>
+    <td mat-cell *matCellDef="let element">
+      <button mat-raised-button color="primary" (click)="UpdateUserData(element.id)" class="m-1"><mat-icon aria-hidden="false"
+          aria-label="Example edit icon" class="m-0" fontIcon="edit"></mat-icon></button>
+      <button mat-raised-button color="warn" (click)="openDialog(element.userName,element.id)" class="m-1"><mat-icon
+          aria-hidden="false" aria-label="Example delete icon" class="m-0" fontIcon="delete"></mat-icon></button>
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+<mat-paginator [length]="dataSource.data.length" [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 100]"
+  aria-label="Select page">
+</mat-paginator>

@@ -1,0 +1,32 @@
+<mat-toolbar color="primary" class="">
+    <mat-toolbar-row class="d-flex justify-content-between ">
+        <div class="h-100">
+            <!-- <span>{{heading}}</span> -->
+            <button mat-flat-button (click)="dashboard()" class="h-100" color="primary" type="button">Dashboard</button>
+            |
+            <button mat-flat-button (click)="CountryPage()" class="h-100" color="primary" type="button">Country List</button>
+
+        </div>
+        <div class="register-button">
+         
+
+            <div class="dropdown ">
+                <button class="btn  dropdown-toggle text-white" type="button" id="dropdownMenu2" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Profile
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                  <!-- <button  (click)="dashboard()" class="dropdown-item" color="primary" type="button">Dashboard</button> -->
+                  <!-- <button  (click)="Register()" class="dropdown-item" color="primary" type="button">Register</button> -->
+                  <!-- <button (click)="CountryPage()" class="dropdown-item" type="button">Country List</button> -->
+                  <button (click)="updateProfile()" class="dropdown-item" type="button">View Profile</button>
+                  <!-- <button (click)="CountryPage()" class="dropdown-item" type="button">Logout</button> -->
+                  <div class="" type="button"><button mat-raised-button (click)="Logout()" type="button" color="primary" class="m-2 ">Logout</button></div>
+                </div>
+              </div>
+        </div>
+
+
+        
+    </mat-toolbar-row>
+</mat-toolbar>
+
